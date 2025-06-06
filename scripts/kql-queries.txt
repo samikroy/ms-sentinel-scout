@@ -1,0 +1,9 @@
+Ingestion Report >>union withsource=TableName1 * | where TimeGenerated > ago(7d) | project _BilledSize, _IsBillable, TimeGenerated, TableName1 | summarize Entries = count(), Size = sum(_BilledSize), last_log = datetime_diff("second",now(), max(TimeGenerated)), estimate  = sumif(_BilledSize, _IsBillable==true)  by TableName1, _IsBillable | project ['Table Name'] = TableName1, ['Table Size'] = Size, ['Table Entries'] = Entries, ['Size per Entry'] = 1.0 * Size / Entries, ['IsBillable'] = _IsBillable, ['Latest Record Created'] =  last_log //, ['Latest Record Recieved'] =last_ingestion | order by ['Table Size']  desc
+Ingestion from AzureActivity Logs >>AzureActivity | summarize count() by bin(TimeGenerated, 1d) | where count_ > 0
+Ingestion from SecurityEvent Logs >>SecurityEvent | where TimeGenerated > ago(1d) | summarize count() by Computer
+Ingestion from MS Defender Logs >>DeviceEvents | where TimeGenerated > ago(1d) | summarize count() by DeviceName
+Ingestion from EntraID Logs >>SigninLogs | where TimeGenerated > ago(1d) | summarize count() by UserPrincipalName
+Ingestion from SecurityAlert Logs >>SecurityAlert | where TimeGenerated > ago(7d) | summarize count() by AlertName
+Devices Missing Security Telemetry >>Heartbeat| summarize LastSeen = max(TimeGenerated) by Computer| where LastSeen < ago(1d)
+AzureDiagnostics (PaaS Logging) >>AzureDiagnostics | summarize Count = count() by bin(TimeGenerated, 1d)
+Data Volume per Solution >>Usage | summarize TotalVolumeMB = sum(Quantity) by Solution | sort by TotalVolumeMB desc
