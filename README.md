@@ -22,8 +22,15 @@ Feature	Description
 
 ```
 
+🔐 Permission
+
 The solution on a service principaln with the 
 Microsoft Sentinel Reader Permission.
+
+⚙️ How it Runs
+
+![Define rules → Run Pipeline → Generate Report - visual selection](https://github.com/user-attachments/assets/dc4d7578-c57a-4223-b8bb-8d3d1b3012f5)
+
 
 Here is a sample report - https://github.com/samikroy/ms-sentinel-scout/blob/main/Upload%20ms-sentinel-scout-report.zip
 
