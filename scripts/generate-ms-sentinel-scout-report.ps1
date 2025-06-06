@@ -167,7 +167,7 @@ foreach ($query in $queries) {
 # Close HTML
 $html += @"
 <footer>
-  © $(Get-Date -Format "yyyy") Microsoft Cloud Security Team. This is an automated report generated for pre-deployment verification.
+  © $(Get-Date -Format "yyyy") Microsoft Sentinel Scout. This is an automated report generated for verification.
 </footer>
 </div>
 </body>
