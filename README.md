@@ -32,7 +32,7 @@ Microsoft Sentinel Reader Permission.
 ![Define rules → Run Pipeline → Generate Report - visual selection](https://github.com/user-attachments/assets/dc4d7578-c57a-4223-b8bb-8d3d1b3012f5)
 
 
-Here is a sample report - https://github.com/samikroy/ms-sentinel-scout/blob/main/Upload%20ms-sentinel-scout-report.zip
+Here is a sample report - https://github.com/samikroy/ms-sentinel-scout/blob/main/ms-sentinel-scout-report.html
 
 Reach out to samik.n.roy@gmail.com for any queries.
 
