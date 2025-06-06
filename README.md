@@ -9,6 +9,11 @@ Feature	Description
 🔐 Secure Login	Uses Azure Service Principal credentials <br/>
 🧰 Plug-and-Play	Just configure secrets, add queries, and run <br/>
 
+🔍 Report Snapshort
+
+![ms-sentinel-scout-report](https://github.com/user-attachments/assets/79645c9b-553e-41e5-b008-b38ce89d235a)
+
+
 📁 Repo Structure
 
 ```
