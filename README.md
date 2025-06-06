@@ -35,3 +35,8 @@ Microsoft Sentinel Reader Permission.
 Here is a sample report - https://github.com/samikroy/ms-sentinel-scout/blob/main/Upload%20ms-sentinel-scout-report.zip
 
 Reach out to samik.n.roy@gmail.com for any queries.
+
+
+🧰 Got Ideas 
+
+Submit Here - https://github.com/samikroy/ms-sentinel-scout/issues
