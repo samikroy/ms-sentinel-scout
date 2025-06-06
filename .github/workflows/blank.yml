@@ -1,0 +1,27 @@
+name: Generate MS Sentinel Scout Report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sentinel-kql:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Generate MS Sentinel Scout Report
+      shell: pwsh
+      env:
+        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
+      run: ./scripts/generate-ms-sentinel-scout-report.ps1
+
+    - name: Upload Markdown Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: Upload ms-sentinel-scout-report
+        path: ./ms-sentinel-scout-report.html
