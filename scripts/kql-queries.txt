@@ -4,7 +4,7 @@ Ingestion from SecurityEvent Logs >>SecurityEvent | where TimeGenerated > ago(1d
 Ingestion from MS Defender Logs >>DeviceEvents | where TimeGenerated > ago(1d) | summarize LogEntries = count() by DeviceName | sort by LogEntries desc
 Ingestion from EntraID Logs >>SigninLogs | where TimeGenerated > ago(1d) | summarize LogEntries = count() by UserPrincipalName | sort by LogEntries desc
 Ingestion from SecurityAlert Logs >>SecurityAlert | where TimeGenerated > ago(7d) | summarize LogEntries = count() by AlertName | sort by LogEntries desc
-Ingestion top 20 ActionTypes >>union withsource=TableName1 * | where TimeGenerated > ago(1d) | extend Action = coalesce(Operation, OperationName, OperationNameValue, ActionType) | where isnotempty(Action) | summarize LogEntries = count() by Action, TableName1 | project Action, LogEntries, ['Table Name'] = TableName | top 20 by LogEntries desc
+Ingestion top 20 ActionTypes >>union withsource=TableName1 * | where TimeGenerated > ago(1d) | extend Action = coalesce(Operation, OperationName, OperationNameValue, ActionType) | where isnotempty(Action) | summarize LogEntries = count() by Action, TableName1 | project Action, LogEntries, ['Table Name'] = TableName1 | top 20 by LogEntries desc
 Devices Missing Security Telemetry >>Heartbeat| summarize LastSeen = max(TimeGenerated) by Computer| where LastSeen < ago(1d) 
 AzureDiagnostics (PaaS Logging) >>AzureDiagnostics | summarize Count = count() by bin(TimeGenerated, 1d) | sort by TimeGenerated desc
 Data Volume per Solution >>Usage | summarize TotalVolumeMB = round(sum(Quantity), 2),  TotalVolumeGB = round(sum(Quantity)/1000, 2) by Solution | sort by TotalVolumeMB desc
