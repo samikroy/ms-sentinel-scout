@@ -30,7 +30,7 @@ Feature	Description
 🔐 Permission
 
 The solution on a service principaln with the 
-Microsoft Sentinel Reader Permission.
+Microsoft Sentinel Reader or Log Analytics Reader Permission.
 
 ⚙️ How it Runs
 
