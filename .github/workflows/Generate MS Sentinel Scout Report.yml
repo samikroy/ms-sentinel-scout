@@ -1,6 +1,9 @@
 name: Generate MS Sentinel Scout Report
 
 on:
+  # Run once a day at midnight
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
