@@ -41,6 +41,23 @@ Here is a sample report - https://github.com/samikroy/ms-sentinel-scout/blob/mai
 
 Reach out to samik.n.roy@gmail.com for any queries.
 
+⚙️ How you can run this 
+ - Clone this repo
+ - Configure the Repository secret based on your environment
+   
+https://github.com/samikroy/ms-sentinel-scout/settings/secrets/actions
+
+<img width="609" height="243" alt="image" src="https://github.com/user-attachments/assets/a75163a5-f057-47f3-becf-73c35d88a6e2" />
+
+ - Review the schedule
+   
+https://github.com/samikroy/ms-sentinel-scout/blob/main/.github/workflows/Generate%20MS%20Sentinel%20Scout%20Report.yml
+
+<img width="394" height="164" alt="image" src="https://github.com/user-attachments/assets/0d932924-03ef-44b1-b638-be7e1b7cbccb" />
+
+
+and then let this run and generate the HTML report.
+
 
 🧰 Got Ideas 
 
